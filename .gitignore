@@ -2,8 +2,13 @@ venv/
 .env
 __pycache__/
 *.pyc
-data/raw/*.csv
-data/processed/*.csv
-models/*.pkl
 .ipynb_checkpoints/
 .vscode/
+
+# Data — ignore by default
+data/raw/*.csv
+data/processed/*.csv
+
+# But DO commit these summary outputs
+!data/processed/rfm_v2.csv
+!data/processed/clv_predictions_v2.csv
