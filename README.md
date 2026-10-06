@@ -9,7 +9,7 @@
 
 ## Executive Summary
 
-GuardianShield Insurance has a book of **5,000 policyholders** across Motor, Home, Life, Travel, and Pet products. Leadership wanted to know: **which customers are most valuable, and where should retention budget be spent?**
+GuardianShield Insurance has a book of **5,000 policyholders** across Motor, Home, Life, Travel, and Pet products. In this synthetic dataset, policy type is captured as a customer attribute and does not vary premium levels, so CLV is modelled at the customer level. Leadership wanted to know: **which customers are most valuable, and where should retention budget be spent?**
 
 This engagement answers that question with a **12-month Customer Lifetime Value (CLV) model** built on survival analysis. The model estimates each customer's expected revenue over the next year, factoring in their probability of remaining active.
 
@@ -183,6 +183,7 @@ Then open the notebooks in `notebooks/` and run them in order:
 2. **12-month horizon** — longer horizons (24–36 months) would need additional survival assumptions.
 3. **Discount rate** — fixed at 1% monthly (≈ 12.7% annual); real cost of capital may differ.
 4. **Censoring** — customers who joined recently have limited observation windows; their CLV estimates carry wider uncertainty.
+5. **Policy type is not premium-correlated** — in this synthetic dataset, premium is drawn from a segment-level distribution independent of policy type. CLV is modelled per customer rather than per product line. A natural extension would correlate premium with policy type to enable product-level CLV analysis.
 
 ---
 
